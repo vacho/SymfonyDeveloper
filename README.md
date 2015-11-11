@@ -4,7 +4,8 @@
 
 #### INICIAMOS UN REPOSITORIO
 ```
-$repository = $this->getDoctrine()->getRepository('AppBundle:Product');
+$em = $this->getContainer()->get('doctrine')->getManager();
+$repository = $em->getRepository('AppBundle:Product');
 ```
 
 #### CONSULTAS
