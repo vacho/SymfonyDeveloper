@@ -22,6 +22,19 @@ $products = $repository->findBy(
     array('price' => 'ASC')
 );
 ```
+Consulta con la flexibilidad de DQL
+```
+$query = $em->createQuery(
+    'SELECT p
+    FROM AppBundle:Product p
+    WHERE p.price > :price
+    ORDER BY p.price ASC'
+)->setParameter('price', '19.99');
+
+$products = $query->getResult();
+//Para obtener un sólo resultado
+//$product = $query->setMaxResults(1)->getOneOrNullResult();
+```
 #### REGISTRO
 ```
 $product = new Product();
