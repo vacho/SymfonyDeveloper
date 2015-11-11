@@ -3,16 +3,18 @@
 ## Entity query
 
 #### INICIAMOS UN REPOSITORIO
+```
 $repository = $this->getDoctrine()->getRepository('AppBundle:Product');
+```
 
 #### CONSULTAS
-// Un producto coinciden nombre y precio
+Un producto coinciden nombre y precio
 ```
 $product = $repository->findOneBy(
     array('name' => 'foo', 'price' => 19.99)
 );
 ```
-// Todos los productos hallando el nombre ordenados por pecio
+Todos los productos hallando el nombre ordenados por pecio
 ```
 $products = $repository->findBy(
     array('name' => 'foo'),
