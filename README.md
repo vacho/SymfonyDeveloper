@@ -2,10 +2,10 @@
 
 ## Entity query
 
--- INICIAMOS UN REPOSITORIO
+#### INICIAMOS UN REPOSITORIO
 $repository = $this->getDoctrine()->getRepository('AppBundle:Product');
 
--- CONSULTAS
+#### CONSULTAS
 // Un producto coinciden nombre y precio
 $product = $repository->findOneBy(
     array('name' => 'foo', 'price' => 19.99)
@@ -17,7 +17,7 @@ $products = $repository->findBy(
     array('price' => 'ASC')
 );
 
--- REGISTRO
+#### REGISTRO
 $product = new Product();
 $product->setName('A Foo Bar');
 $product->setPrice('19.99');
