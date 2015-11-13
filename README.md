@@ -22,7 +22,7 @@ $products = $repository->findBy(
     array('price' => 'ASC')
 );
 ```
-Consulta con la flexibilidad de DQL
+Consultas con la flexibilidad de DQL
 ```
 $query = $em->createQuery(
     'SELECT p
@@ -34,6 +34,24 @@ $query = $em->createQuery(
 $products = $query->getResult();
 //Para obtener un sólo resultado
 //$product = $query->setMaxResults(1)->getOneOrNullResult();
+
+
+$deadlineMessage = new \DateTime();
+$toleranceMessage = 8760; //1 año en horas
+$deadlineMessage->modify("-$toleranceMessage hours");
+
+$query = $em->createQuery(
+    "SELECT a
+    FROM TaronEventBundle:Assistant a
+    WHERE
+    (
+    a.isAttended IS NULL OR
+    a.isAttended = FALSE
+    )
+    AND
+    a.time > :limitDate
+")->setParameter('limitDate', $deadlineMessage->format('Y-m-d H:i:s'));
+$assistants = $query->getResult();
 ```
 #### REGISTRO
 ```
