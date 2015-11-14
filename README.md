@@ -69,3 +69,9 @@ $em = $this->getDoctrine()->getManager();
 $em->persist($product);
 $em->flush();
 ```
+
+#### console
+```
+Imprimir en comando el ambiente
+$output->writeln($this->getContainer()->get('kernel')->getEnvironment());
+```
