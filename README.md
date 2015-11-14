@@ -9,6 +9,11 @@ $repository = $em->getRepository('AppBundle:Product');
 ```
 
 #### CONSULTAS
+Un producto por su id
+```
+$product = $repository->find(5442);
+```
+
 Un producto coinciden nombre y precio
 ```
 $product = $repository->findOneBy(
