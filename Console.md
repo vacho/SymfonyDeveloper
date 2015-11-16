@@ -1,6 +1,17 @@
 # Console
 
 ## 
+#### Generar codigo
+Generar un bundle
+```
+$ php app/console generate:bundle
+```
+
+#### Administración
+Borrar cache
+```
+$ php app/console cache:clear --env=prod
+```
 
 #### Doctrine
 Generamos script de actualización de base de datos conforme Entidades
@@ -15,3 +26,7 @@ $ php app/console doctrine:generate:entities Taron/ProductBundle/Entity/ProductT
 #### Programación
 ## Generar un comando personalizado
 http://symfony.com/doc/current/cookbook/console/console_command.html
+
+#### Referencias
+Bundles
+http://symfony.com/doc/current/bundles/SensioGeneratorBundle/commands/generate_bundle.html
