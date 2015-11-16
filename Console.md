@@ -11,3 +11,7 @@ Generar getters an setters
 ```
 $ php app/console doctrine:generate:entities Taron/ProductBundle/Entity/ProductType
 ```
+
+#### Programación
+## Generar un comando personalizado
+http://symfony.com/doc/current/cookbook/console/console_command.html
