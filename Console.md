@@ -6,6 +6,10 @@ Generar un bundle
 ```
 $ php app/console generate:bundle
 ```
+Generar una entidad
+```
+$ php app/console doctrine:generate:entity
+```
 
 #### Administración
 Borrar cache
