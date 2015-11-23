@@ -12,7 +12,7 @@ $ php app/console doctrine:generate:entity
 ```
 Generar CRUD (Create Read Update Delete) de la entidad
 ```
-$ php call/app/console generate:doctrine:crud --entity=GoogleApiBundle:GoogleUser --route-prefix=user --with-write --format=yml --no-interaction
+$ php app/console generate:doctrine:crud --entity=GoogleApiBundle:GoogleUser --route-prefix=user --with-write --format=yml --no-interaction
 ```
 
 Generar Sólo un formulario basado en una entidad
