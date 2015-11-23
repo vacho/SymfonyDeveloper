@@ -43,3 +43,6 @@ http://symfony.com/doc/current/cookbook/console/console_command.html
 #### Referencias
 Bundles
 http://symfony.com/doc/current/bundles/SensioGeneratorBundle/commands/generate_bundle.html
+Crud
+http://symfony.com/doc/current/bundles/SensioGeneratorBundle/commands/generate_doctrine_crud.html
+
