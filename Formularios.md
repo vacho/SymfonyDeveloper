@@ -39,6 +39,15 @@ Customización de campos
             ->add('parent', null, array('label' => 'Padre'))
         ;
 ```
+Selector calendario con hora con jquery calendar
+```
+//Se necesita tener datetimepicker.js incluido
+        ->add('dateAdded', 'datetime', array(
+              'widget' => 'single_text',
+              'format' => 'dd-MM-yyyy',
+              'attr' => array('class' => 'datetime')
+        ))
+```
 
 #### Referencias
 Tipos de campos en formularios
