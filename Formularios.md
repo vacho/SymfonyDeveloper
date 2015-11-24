@@ -5,7 +5,7 @@
 Customización de campos
 ```
 // En el metodo buildForm del 'Type' que define el formulario
-        $builder
+         $builder
             ->add('label', null, array(
               'label' => 'Pregunta',
               'attr' => array(
@@ -18,14 +18,24 @@ Customización de campos
               'attr' => array(
                 'size' => '400',
                 'style' => 'width:400px'
-              )
+              ),
+              'required' => false,
             ))
             ->add('sort', null, array('label' => 'Orden'))
             ->add('renderLabel', null, array('label' => 'Etiqueta'))
-            ->add('isRenderable', null, array('label' => 'Es etiquetable'))
-            ->add('renderType', null, array('label' => 'Tipo etiqueta'))
-            ->add('dateAdded', 'datetime', array('label' => 'Agregada'))
-            ->add('dateUpdated', null, array('label' => 'Actualizada'))
+            ->add('active', null, array('label' => 'Activo'))
+            ->add('dateAdded', 'datetime', array(
+              'widget' => 'single_text',
+              'attr' => array('class' => 'datetime'),
+              'required' => false,
+              'read_only' => true,
+            ))
+            ->add('dateUpdated', 'datetime', array(
+              'widget' => 'single_text',
+              'attr' => array('class' => 'datetime'),
+              'required' => false,
+              'read_only' => true,
+            ))
             ->add('type', 'choice', array(
               'label' => 'Tipo',
               'choices'  => array(
