@@ -53,3 +53,9 @@ Selector calendario con hora con jquery calendar
 Tipos de campos en formularios
 http://symfony.com/doc/current/reference/forms/types.html
 
+Transformar campos antes que haga submit
+http://symfony.com/doc/master/cookbook/form/data_transformers.html
+
+Modificación dinámica de formularios
+http://symfony.com/doc/master/cookbook/form/dynamic_form_modification.html
+
