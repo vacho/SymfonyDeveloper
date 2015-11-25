@@ -4,7 +4,7 @@
 #### Agregar un nuevo componente
 Agregamos
 ```
-$ composer require symfony/finder
+$ composer require symfony/debug
 ```
 
 #### Referencias
