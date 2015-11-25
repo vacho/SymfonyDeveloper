@@ -45,11 +45,6 @@ $products = $query->getResult();
 //Para obtener un sólo resultado
 //$product = $query->setMaxResults(1)->getOneOrNullResult();
 
-
-$deadlineMessage = new \DateTime();
-$toleranceMessage = 8760; //1 año en horas
-$deadlineMessage->modify("-$toleranceMessage hours");
-
 $query = $em->createQuery(
     "SELECT a
     FROM TaronEventBundle:Assistant a
@@ -62,6 +57,21 @@ $query = $em->createQuery(
     a.time > :limitDate
 ")->setParameter('limitDate', $deadlineMessage->format('Y-m-d H:i:s'));
 $assistants = $query->getResult();
+
+//Consulta con joins
+$query = $em->createQuery('
+    SELECT q
+    FROM GuumoCallBundle:Question q
+    LEFT JOIN GuumoCallBundle:Ring r
+        WITH q.ring = r.id
+    LEFT JOIN GuumoCallBundle:InfoRequest ir
+        WITH q.infoRequest = ir.id
+    WHERE
+    .customer = :customer_id
+    ORDER BY ir.sort ASC
+')
+->setParameter('customer_id', $Customer->getId());
+$questionAnswer = $query->getResult();
 ```
 #### REGISTRO
 ```
