@@ -67,7 +67,7 @@ $query = $em->createQuery('
     LEFT JOIN GuumoCallBundle:InfoRequest ir
         WITH q.infoRequest = ir.id
     WHERE
-    .customer = :customer_id
+    r.customer = :customer_id
     ORDER BY ir.sort ASC
 ')
 ->setParameter('customer_id', $Customer->getId());
