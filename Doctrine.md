@@ -72,6 +72,14 @@ $query = $em->createQuery('
 ')
 ->setParameter('customer_id', $Customer->getId());
 $questionAnswer = $query->getResult();
+
+//DQL busqueda en array y formato alterno
+$questions_ids = $request->get("checkChildren");
+$qb = $em->createQueryBuilder();
+$qb->select('ir');
+$qb->from('GuumoCallBundle:InfoRequest', 'ir');
+$qb->where($qb->expr()->in('ir.id', $questions_ids));
+$requests = $qb->getQuery()->getResult();
 ```
 #### REGISTRO
 ```
