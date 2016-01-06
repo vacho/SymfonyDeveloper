@@ -92,6 +92,14 @@ $em = $this->getDoctrine()->getManager();
 $em->persist($product);
 $em->flush();
 ```
+#### Consultas directas a la base de datos
+```
+$con = $this->getDoctrine()->getConnection("default");
+
+$resInser = $con->query("INSERT INTO external_purchase VALUES (
+null, '$event_id', '$origen', '$name', '$surname', '$phone', '$email',
+'$url', '$origin', '$charterCode', '$charterCoupon', $isCharter, '$transaction_id' );");
+```
 
 #### console
 ```
