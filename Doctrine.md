@@ -6,6 +6,9 @@ http://symfony.com/doc/current/book/doctrine.html
 ## Relación entre entidades
 http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
 
+## Consultas directas medinte sql
+http://doctrine-orm.readthedocs.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html
+
 ## Entity query
 #### INICIAMOS UN REPOSITORIO
 ```
