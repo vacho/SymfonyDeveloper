@@ -99,6 +99,26 @@ $con = $this->getDoctrine()->getConnection("default");
 $resInser = $con->query("INSERT INTO external_purchase VALUES (
 null, '$event_id', '$origen', '$name', '$surname', '$phone', '$email',
 '$url', '$origin', '$charterCode', '$charterCoupon', $isCharter, '$transaction_id' );");
+
+
+$con = $this->getDoctrine()->getConnection("default");
+$sql = "
+  SELECT * FROM ring  
+  WHERE user_id = " . $coach . " AND 
+  date >= '$dateIni' AND 
+  date <= '$dateFin' 
+  ORDER BY date ASC
+";
+
+$arrayRings = $con->query($sql)->fetchAll();
+$rings = array();
+for($i = 0; $i < count($arrayRings); $i++) {
+    $idRing = $arrayRings[$i]['id'];
+    $dateAux = new \DateTime($arrayRings[$i]['date']);
+    $rings[$i]['hour'] = $dateAux->format('H:i');
+    ...
+}
+
 ```
 
 #### console
