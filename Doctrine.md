@@ -27,6 +27,11 @@ Un producto coinciden nombre y precio
 $product = $repository->findOneBy(
     array('name' => 'foo', 'price' => 19.99)
 );
+//Recuperamos una entidad
+$repository = $em->getRepository('TaronEventBundle:Subscription');
+$subscription = $repository->findOneBy(
+    array('order' => $order->getId())
+);
 ```
 Todos los productos hallando el nombre ordenados por pecio
 ```
