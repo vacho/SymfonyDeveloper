@@ -3,7 +3,7 @@
 ## 
 #### Campos
 Customización de campos
-```
+```php
 // En el metodo buildForm del 'Type' que define el formulario
          $builder
             ->add('label', null, array(
@@ -50,7 +50,7 @@ Customización de campos
         ;
 ```
 Selector calendario con hora con jquery calendar
-```
+```php
 //Se necesita tener datetimepicker.js incluido
         ->add('dateAdded', 'datetime', array(
               'widget' => 'single_text',

@@ -9,6 +9,30 @@ sudo apt install symfony-cli
 symfony check:req
 ```
 
+## Manage the first app
+```bash
+# Creates a new app
+symfony new app_name
+# Start to run the app.
+symfony serve
+# Install twig
+composer require symfony/twig-bundle
+# Install maker code
+composer require --dev symfony/maker-bundle
+# it is the same
+composer require maker --dev 
+```
+
+## Maker console
+```bash
+php bin/console 
+bin/console help make:controller
+
+# Create a controller.
+bin/console make:controller
+```
+
 
 ## References
 - How to install: https://symfony.com/download
+- How to use templates: https://symfony.com/doc/current/templates.html#installation

@@ -11,19 +11,19 @@ http://doctrine-orm.readthedocs.org/projects/doctrine-dbal/en/latest/reference/d
 
 ## Entity query
 #### INICIAMOS UN REPOSITORIO
-```
+```php
 $em = $this->getContainer()->get('doctrine')->getManager();
 $repository = $em->getRepository('AppBundle:Product');
 ```
 
 #### CONSULTAS
 Un producto por su id
-```
+```php
 $product = $repository->find(5442);
 ```
 
 Un producto coinciden nombre y precio
-```
+```php
 $product = $repository->findOneBy(
     array('name' => 'foo', 'price' => 19.99)
 );
@@ -34,14 +34,14 @@ $subscription = $repository->findOneBy(
 );
 ```
 Todos los productos hallando el nombre ordenados por pecio
-```
+```php
 $products = $repository->findBy(
     array('name' => 'foo'),
     array('price' => 'ASC')
 );
 ```
 Consultas con la flexibilidad de DQL
-```
+```php
 $query = $em->createQuery(
     'SELECT p
     FROM AppBundle:Product p
@@ -90,7 +90,7 @@ $qb->where($qb->expr()->in('ir.id', $questions_ids));
 $requests = $qb->getQuery()->getResult();
 ```
 #### REGISTRO
-```
+```php
 $product = new Product();
 $product->setName('A Foo Bar');
 $product->setPrice('19.99');
@@ -101,7 +101,7 @@ $em->persist($product);
 $em->flush();
 ```
 #### Consultas directas a la base de datos
-```
+```php
 $con = $this->getDoctrine()->getConnection("default");
 
 $resInser = $con->query("INSERT INTO external_purchase VALUES (
@@ -130,7 +130,7 @@ for($i = 0; $i < count($arrayRings); $i++) {
 ```
 
 #### console
-```
+```php
 Imprimir en comando el ambiente
 $output->writeln($this->getContainer()->get('kernel')->getEnvironment());
 ```

@@ -3,7 +3,7 @@
 ## 
 #### Agregar un nuevo componente
 Agregamos
-```
+```bash
 $ composer require symfony/debug
 ```
 
