@@ -1,5 +1,11 @@
 # Doctrine
 
+Starting commands
+```bash
+composer require symfony/orm-pack
+```
+
+
 ## Guía doctrine: Creacion bases de datos, entidades, campos
 http://symfony.com/doc/current/book/doctrine.html
 

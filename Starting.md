@@ -15,6 +15,8 @@ symfony check:req
 symfony new app_name
 # Start to run the app.
 symfony serve
+symfony server:stop
+
 # Install twig
 composer require symfony/twig-bundle
 # Install maker code
@@ -25,7 +27,8 @@ composer require maker --dev
 
 ## Maker console
 ```bash
-php bin/console 
+# Two ways to acces the console commands.
+php bin/console make:controller
 bin/console help make:controller
 
 # Create a controller.
