@@ -32,7 +32,7 @@ php bin/console make:controller
 bin/console help make:controller
 
 # Create a controller.
-bin/console make:controller
+ bin/console make:controller
 ```
 
 

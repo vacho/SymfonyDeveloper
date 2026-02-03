@@ -1,0 +1,5 @@
+{
+    "require": {
+        "symfony/twig-bundle": "^8.0"
+    }
+}
