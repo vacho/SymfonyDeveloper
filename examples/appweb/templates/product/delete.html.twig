@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Delete Product {% endblock %}
+
+{% block body %}
+    <h1>Are you sure to delete this product?</h1>
+    
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    
+        {{ form_row(form.name, {'attr': {'readonly': true}}) }}
+        {{ form_row(form.description, {'attr': {'readonly': true}}) }}
+        {{ form_row(form.size, {'attr': {'readonly': true}}) }}
+        {{ form_row(form.save, {'label': 'Delete'}) }}
+    
+    {{ form_end(form)}}
+
+    <ul>
+        <li><a href="{{ path('product_index') }}">Products</a></li>
+    </ul>
+
+{% endblock %}

@@ -13,6 +13,10 @@ symfony check:req
 ```bash
 # Creates a new app
 symfony new app_name
+
+# Creates a new app with a lot of dependencies to develop a webapp
+symfony new app_name --version="7.1.*" --webapp
+
 # Start to run the app.
 symfony serve
 symfony server:stop

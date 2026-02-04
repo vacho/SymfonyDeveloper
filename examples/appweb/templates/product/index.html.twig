@@ -23,7 +23,13 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td>{{ product.size }}</td>
-                <td><a href="{{ path('product_show', {'id': product.id}) }}">View</a></td>
+                <td>
+                    <ul>
+                        <li><a href="{{ path('product_show', {'id': product.id}) }}">View</a></li>
+                        <li><a href="{{ path('product_edit', {'id': product.id}) }}">Edit</a></li>
+                        <li><a href="{{ path('product_delete', {'id': product.id}) }}">Delete</a></li>
+                    </ul>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

@@ -1,8 +1,18 @@
-# Formularios
+# Forms
 
-## 
-#### Campos
-Customización de campos
+## Starting
+```bash
+# Install
+composer require symfony/form
+composer require symfony/validator
+
+# Create a form
+bin/console make:form
+```
+
+ 
+## Fields
+Custom fields
 ```php
 // En el metodo buildForm del 'Type' que define el formulario
          $builder
@@ -60,12 +70,15 @@ Selector calendario con hora con jquery calendar
 ```
 
 #### Referencias
-Tipos de campos en formularios
+- Forms guide
+https://symfony.com/doc/current/forms.html
+
+- Field kinds
 http://symfony.com/doc/current/reference/forms/types.html
 
-Transformar campos antes que haga submit
+- Fields transformation before submit
 http://symfony.com/doc/master/cookbook/form/data_transformers.html
 
-Modificación dinámica de formularios
+- Dinamic form modification
 http://symfony.com/doc/master/cookbook/form/dynamic_form_modification.html
 
