@@ -2,52 +2,74 @@
 
 Starting commands
 ```bash
+# Install doctrine.
 composer require symfony/orm-pack
+
+# Create a database Mysql, Postgres
+bin/console doctrine:database:create
+
+# Create a database sqlite
+bin/console doctrine:schema:create
+
+# Create an Entity
+bin/console make:entity product
+
+# Create a database migration
+bin/console make:migration
+
+# Run the migrations
+bin/console doctrine:migrations:migrate
 ```
 
+Fake data
+```bash
+# Install DoctrineFixtures bundle
+composer require --dev orm-fixture
 
-## Guía doctrine: Creacion bases de datos, entidades, campos
-http://symfony.com/doc/current/book/doctrine.html
+# program into src/DataFixtures/AppFixtures.php
 
-## Relación entre entidades
-http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
+# Load 
+bin/console doctrine:fixtures:load 
+```
 
-## Consultas directas medinte sql
-http://doctrine-orm.readthedocs.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html
+Database by console
+```bash
+bin/console dbal:run-sql "SELECT * FROM product"
+```
 
 ## Entity query
-#### INICIAMOS UN REPOSITORIO
 ```php
+// Start a repository.
 $em = $this->getContainer()->get('doctrine')->getManager();
 $repository = $em->getRepository('AppBundle:Product');
 ```
 
 #### CONSULTAS
-Un producto por su id
 ```php
+// A product by id.
 $product = $repository->find(5442);
 ```
 
-Un producto coinciden nombre y precio
 ```php
+// A product by name and price.
 $product = $repository->findOneBy(
     array('name' => 'foo', 'price' => 19.99)
 );
-//Recuperamos una entidad
+//Retrive an entiy
 $repository = $em->getRepository('TaronEventBundle:Subscription');
 $subscription = $repository->findOneBy(
     array('order' => $order->getId())
 );
 ```
-Todos los productos hallando el nombre ordenados por pecio
 ```php
+// All the products with a name foo and order by prirce.
 $products = $repository->findBy(
     array('name' => 'foo'),
     array('price' => 'ASC')
 );
 ```
-Consultas con la flexibilidad de DQL
 ```php
+// Query with DQL.
 $query = $em->createQuery(
     'SELECT p
     FROM AppBundle:Product p
@@ -140,3 +162,15 @@ for($i = 0; $i < count($arrayRings); $i++) {
 Imprimir en comando el ambiente
 $output->writeln($this->getContainer()->get('kernel')->getEnvironment());
 ```
+
+
+## References
+- Guía doctrine: Creacion bases de datos, , , campos
+http://symfony.com/doc/current/book/doctrine.html
+
+- Relación entre entidades
+http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
+
+- Consultas directas medinte sql
+http://doctrine-orm.readthedocs.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html
+
