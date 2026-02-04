@@ -7,12 +7,14 @@
 <h1>Products</h1>
 
 <div class="table">
+    <a href="{{ path('product_new')}}"> Create new</a>
     <table>
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Size</th>
+                <th>Operations</th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +23,14 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td>{{ product.size }}</td>
+                <td><a href="{{ path('product_show', {'id': product.id}) }}">View</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    
+    <ul>
+        <li><a href="{{ path('home') }}">Home</a></li>
+    </ul>
+
 </div>
 {% endblock %}

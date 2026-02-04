@@ -9,12 +9,10 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ name }} running into {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>Hello {{ name }}</h1>
+    <h2>Running into {{ controller_name }}</h2>
     <ul>
-        <li>Your controller at <code>/home/vacho/projects/SymfonyDeveloper/examples/appweb/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/home/vacho/projects/SymfonyDeveloper/examples/appweb/templates/home/index.html.twig</code></li>
+        <li><a href="{{ path('product_index') }}">Products</a></li>
     </ul>
 </div>
 {% endblock %}
